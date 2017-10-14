@@ -7,13 +7,12 @@ public class Peca {
 	private Double precoVendaPraticado;
 	private int qtd;
 	private Tipo tipo;
-	
-	
+		
 	public Peca(){
 		
 	}
 	
-	public Peca(int cod, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo){
+	public Peca(int cod, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo) throws DadosException{
 		this.setCod(cod);
 		this.setPrecoDeCompra(PrecoDeCompra);
 		this.setPrecoVendaSugerido(precoVendaSugerido);
@@ -25,28 +24,27 @@ public class Peca {
 		return cod;
 	}
 
-	public void setCod(int cod) {
+	public void setCod(int cod) throws DadosException{
 		Peca.validarCod(cod);
 		this.cod = cod;
 	}
-
+	
 
 	public Double getPrecoDeCompra() {
 		return precoDeCompra;
 	}
 
-	public void setPrecoDeCompra(Double precoDeCompra) {
+	public void setPrecoDeCompra(Double precoDeCompra) throws DadosException{
 		Peca.validarPrecoCompra(precoDeCompra);
 		this.precoDeCompra = precoDeCompra;
 	}
-
 
 
 	public Double getPrecoVendaSugerido() {
 		return precoVendaSugerido;
 	}
 
-	public void setPrecoVendaSugerido(Double precoVendaSugerido) {
+	public void setPrecoVendaSugerido(Double precoVendaSugerido) throws DadosException{
 		Peca.validarPrecoVendaSugerido(precoVendaSugerido);
 		this.precoVendaSugerido = precoVendaSugerido;
 	}
@@ -57,29 +55,27 @@ public class Peca {
 		return precoVendaPraticado;
 	}
 
-	public void setPrecoVendaPraticado(Double precoVendaPraticado) {
+	public void setPrecoVendaPraticado(Double precoVendaPraticado) throws DadosException{
 		Peca.validarPrecoVendaPraticado(precoVendaPraticado);
 		this.precoVendaPraticado = precoVendaPraticado;
 	}
 
-	
-
+		
 	public int getQtd() {
 		return qtd;
 	}
 
-	public void setQtd(int qtd) {
+	public void setQtd(int qtd) throws DadosException{
 		Peca.ValidarQTD(qtd);
 		this.qtd = qtd;
 	}
 
 	
-
 	public Tipo getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Tipo tipo) {
+	public void setTipo(Tipo tipo) throws DadosException{
 		Peca.validarTipo(tipo);
 		this.tipo = tipo;
 	}
@@ -87,32 +83,32 @@ public class Peca {
 	
 	//MÉTODOS VALIDADORES
 	
-	private static void validarCod(int cod) {
+	private static void validarCod(int cod) throws DadosException{
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private static void validarPrecoCompra(Double precoDeCompra) {
+	private static void validarPrecoCompra(Double precoDeCompra)throws DadosException {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private static void validarPrecoVendaSugerido(Double precoVendaSugerido) {
+	private static void validarPrecoVendaSugerido(Double precoVendaSugerido) throws DadosException{
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private static void validarPrecoVendaPraticado(Double precoVendaPraticado) {
+	private static void validarPrecoVendaPraticado(Double precoVendaPraticado) throws DadosException{
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private static void ValidarQTD(int qtd2) {
+	private static void ValidarQTD(int qtd) throws DadosException{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void validarTipo(Tipo tipo2) {
+	private static void validarTipo(Tipo tipo) throws DadosException {
 		// TODO Auto-generated method stub
 		
 	}

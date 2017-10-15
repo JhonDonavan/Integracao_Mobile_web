@@ -1,6 +1,16 @@
 package model;
 
-public class Peca {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pecas")
+public class Peca implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	private int cod;
 	private Double precoDeCompra;
 	private Double precoVendaSugerido;

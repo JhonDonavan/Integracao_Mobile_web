@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+@Named
 @Entity
 @Table(name = "pecas")
 public class Peca implements Serializable {
@@ -31,14 +33,26 @@ public class Peca implements Serializable {
 
 	}
 
-	public Peca(int cod, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo) throws DadosException {
-		this.setCod(cod);
+	public Peca(Integer id, int cod_peca, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo) throws DadosException {
+		this.setId(id);
+		this.setCod(cod_peca);
 		this.setPrecoDeCompra(PrecoDeCompra);
 		this.setPrecoVendaSugerido(precoVendaSugerido);
 		this.setQtd(qtd);
 		this.setTipo(tipo);
 	}
+	
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		Peca.validarId(id);
+		this.id = id;
+	}
+
+	
 	public int getCod() {
 		return cod_peca;
 	}
@@ -94,6 +108,11 @@ public class Peca implements Serializable {
 	}
 
 	// MÉTODOS VALIDADORES
+	
+	private static void validarId(Integer id2) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	private static void validarCod(int cod) throws DadosException {
 		// TODO Auto-generated method stub

@@ -2,9 +2,11 @@ package model.dao;
 
 import java.util.List;
 
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 
+@Named
 public class GenericDAO<T> {
 
 	private final Class<T> classe;

@@ -9,8 +9,7 @@ import model.Usuario;
 
 public class UsuarioDAO {
 
-	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("usuarios");
-	private EntityManager em = factory.createEntityManager();
+	EntityManager em = JPAUtil.getEntityManager();
 
 	public Usuario getUsuario(String nomeUsuario, String senha) {
 

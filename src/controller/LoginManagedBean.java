@@ -1,14 +1,16 @@
 package controller;
 
-import javax.annotation.ManagedBean;
+
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import model.Usuario;
 import model.dao.UsuarioDAO;
 
-@ManagedBean(value = "LoginMB")
+@SuppressWarnings("deprecation")
+@ManagedBean(name = "LoginMB")
 @ViewScoped
 public class LoginManagedBean {
  
@@ -26,7 +28,7 @@ public class LoginManagedBean {
                                          "Erro no Login!"));
                   return null;
             } else {
-                  return "/main";
+                  return "/main.xhtml";
             }
             
             

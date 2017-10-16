@@ -1,7 +1,5 @@
 package tester;
 
-import javax.inject.Inject;
-
 import model.DadosException;
 import model.Peca;
 import model.Tipo;

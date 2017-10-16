@@ -40,12 +40,14 @@ public class Usuario implements Serializable {
 	@Column(name = "enable", columnDefinition = "BOOLEAN")
 	private boolean enable;
 
-
-
-	@ManyToMany
-	@NotEmpty(message = "Favor selecionar os papeis do usuário.")
-	@JoinTable(name = "autorizacao_usuario")
-	private List<Autorizacao> autorizacoes;
+	/*
+	 * @ManyToMany
+	 * 
+	 * @NotEmpty(message = "Favor selecionar os papeis do usuário.")
+	 * 
+	 * @JoinTable(name = "autorizacao_usuario") private List<Autorizacao>
+	 * autorizacoes;
+	 */
 
 	@Column(name = "lastAccess", unique = true)
 	@Temporal(TemporalType.DATE)
@@ -95,13 +97,12 @@ public class Usuario implements Serializable {
 		this.enable = enable;
 	}
 
-	public List<Autorizacao> getAutorizacoes() {
-		return autorizacoes;
-	}
-
-	public void setAutorizacoes(List<Autorizacao> autorizacoes) {
-		this.autorizacoes = autorizacoes;
-	}
+	/*
+	 * public List<Autorizacao> getAutorizacoes() { return autorizacoes; }
+	 * 
+	 * public void setAutorizacoes(List<Autorizacao> autorizacoes) {
+	 * this.autorizacoes = autorizacoes; }
+	 */
 
 	public Date getUltimoAcesso() {
 		return ultimoAcesso;
@@ -115,7 +116,6 @@ public class Usuario implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((autorizacoes == null) ? 0 : autorizacoes.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (enable ? 1231 : 1237);
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -134,11 +134,6 @@ public class Usuario implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (autorizacoes == null) {
-			if (other.autorizacoes != null)
-				return false;
-		} else if (!autorizacoes.equals(other.autorizacoes))
-			return false;
 		if (email == null) {
 			if (other.email != null)
 				return false;
@@ -168,8 +163,5 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-
-
-
 
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<title>NAME</title>
+
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputScript target="body" library="js" name="bootstrap.min.js" />
+</h:head>
+
+<div class="login-body">
+	<article class="container-login center-block"> <section>
+	<ul id="top-bar" class="nav nav-tabs nav-justified">
+		<li class="active"><a href="#login-access">Bem-Vindo!</a></li>
+		<li><a>NAME</a></li>
+	</ul>
+	<div
+		class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12">
+		<div id="login-access" class="tab-pane fade active in">
+			<h2>
+				<i class="glyphicon glyphicon-log-in"></i> Acesso
+			</h2>
+			<h:form>
+				<p:messages id="messages" />
+				<p:panelGrid columns="2">
+					<p:outputLabel for="nomeUsuario" value="Nome Usuário:" />
+					<p:inputText id="nomeUsuario"
+						value="#{LoginMB.usuario.nomeUsuario}" />
+
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha" value="#{LoginMB.usuario.senha}" />
+
+					<p:commandButton value="Enviar" icon="ui-icon-star"
+						action="#{LoginMB.envia}" ajax="false">
+					</p:commandButton>
+
+				</p:panelGrid>
+			</h:form>
+		</div>
+	</div>
+	</section> </article>
+</div>
+</h:html>

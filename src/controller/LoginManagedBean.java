@@ -28,7 +28,7 @@ public class LoginManagedBean {
                                          "Erro no Login!"));
                   return null;
             } else {
-                  return "/main.xhtml";
+                  return "/index.xhtml";
             }
             
             

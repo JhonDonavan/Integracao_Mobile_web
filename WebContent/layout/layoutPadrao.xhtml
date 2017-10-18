@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Meu Sistema</title>
+	<style type="text/css">
+body {
+	background-color: #eeeeee;
+	font-size: 12px
+}
+</style>
+</h:head>
+<h:body>
+	<div align="center">
+		<p:layout style="min-width:140px;max-width:1400px;min-height:940px">
+			<p:layoutUnit position="north" size="100" header="Top"
+				resizable="true" closable="true" collapsible="true">
+				<h:outputText value="North unit content." />
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="200" header="Left"
+				resizable="true" closable="true" collapsible="true">
+				<h:outputText value="West unit content." />
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center">
+				<ui:insert name="centro">
+                       //paginas
+                    </ui:insert>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="south" size="100" header="Bottom"
+				resizable="true" closable="true" collapsible="true">
+				<h:outputText value="South unit content." />
+			</p:layoutUnit>
+
+		</p:layout>
+	</div>
+</h:body>
+</html>

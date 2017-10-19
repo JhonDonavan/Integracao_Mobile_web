@@ -15,32 +15,27 @@
 					<h:panelGrid columns="2" cellpadding="3">
 
 						<h:outputLabel value="Código Peca: " />
-						<p:inputText required="true"
+						<p:inputText required="true" value="#{cadastrarPecasBean.peca.cod}"
 							requiredMessage="Informe o codigo da peça">
 						</p:inputText>
 
-						<h:outputLabel value="Nome Peça: " />
-						<p:inputText required="true"
-							requiredMessage="Informe o nome da peca">
-						</p:inputText>
-
 						<p:outputLabel value="Preço de compra: " />
-						<p:inputNumber required="true"
+						<p:inputNumber required="true" value="#{cadastrarPecasBean.peca.precoDeCompra}"
 							requiredMessage="Informe o preço de compra da peça na fornecedora">
 						</p:inputNumber>
 
 						<p:outputLabel value="Preço de venda sugerido: " />
-						<p:inputNumber required="true"
+						<p:inputNumber required="true" value="#{cadastrarPecasBean.peca.precoVendaSugerido}"
 							requiredMessage="Informe o preço de venda sugerido pela vendedora">
 						</p:inputNumber>
 
 						<p:outputLabel value="Quantidade: " />
-						<p:inputNumber required="true"
+						<p:inputNumber required="true" value="#{cadastrarPecasBean.peca.qtd}"
 							requiredMessage="Informe a numeração de peca">
 						</p:inputNumber>
 						
 						<p:outputLabel value="Tamanho: " />
-						<p:inputNumber required="true"
+						<p:inputNumber required="true" value="#{cadastrarPecasBean.peca.tamanho}"
 							requiredMessage="Informe o tamanho da joia: ">
 						</p:inputNumber>
 						
@@ -58,7 +53,7 @@
 
 						<br />
 						<br />
-						<p:commandButton value="Salvar" icon="ui-icon-disk" update="@form" />
+						<p:commandButton value="Salvar" action="#{cadastrarPecasBean.salvar}"  icon="ui-icon-disk" update="@form" />
 					</h:panelGrid>
 
 					<!-- Mostra modal da data -->

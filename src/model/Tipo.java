@@ -3,18 +3,18 @@ package model;
 public enum Tipo {
 	BRINCO("Brinco"), CORDAO("Cordao"), GARGANTILHA("Gargantilha"), PULSEIRA("Pulseira"), ANEL("Aneis");
 	
-	private String label;
+	private String descricao;
 	
-	private Tipo(String label){
-		this.label = label;
+	private Tipo(String descricao){
+		this.descricao = descricao;
 	}
 
 	public String getLabel() {
-		return label;
+		return descricao;
 	}
 
-	public void setLabel(String label) {
-		this.label = label;
+	public void setLabel(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }

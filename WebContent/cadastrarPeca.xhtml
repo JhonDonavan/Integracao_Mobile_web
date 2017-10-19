@@ -38,11 +38,23 @@
 						<p:inputNumber required="true"
 							requiredMessage="Informe a numeração de peca">
 						</p:inputNumber>
+						
+						<p:outputLabel value="Tamanho: " />
+						<p:inputNumber required="true"
+							requiredMessage="Informe o tamanho da joia: ">
+						</p:inputNumber>
+						
 
-						<h:outputLabel value="Tipo de Peca: " />
-						<p:inputText required="true"
-							requiredMessage="Informe o tipo da peca">
-						</p:inputText>
+						<p:outputLabel for="tipoPeca" value="Peça"
+							class="outputLabel" />
+						<p:selectOneMenu id="tipoPeca" required="true"
+							requiredMessage="Favor informar o tipo de peça"
+							value="#{cadastrarPecasBean.peca.tipo}">
+							<f:selectItem itemLabel="SELECIONE O TIPO DE PEÇA" />
+							<f:selectItems value="#{cadastrarPecasBean.tipo}"
+								var="tipo" itemLabel="#{tipo}"
+								itemValue="#{tipo}" />
+						</p:selectOneMenu>
 
 						<br />
 						<br />

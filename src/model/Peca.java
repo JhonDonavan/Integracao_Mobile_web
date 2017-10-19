@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 
-import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Named
+
 @Entity
 @Table(name = "pecas")
 public class Peca implements Serializable {
@@ -28,6 +27,7 @@ public class Peca implements Serializable {
 	private Double precoVendaPraticado;
 	private int qtd;
 	private Tipo tipo;
+	private int tamanho;
 
 	public Peca() {
 
@@ -106,9 +106,23 @@ public class Peca implements Serializable {
 		Peca.validarTipo(tipo);
 		this.tipo = tipo;
 	}
+	
+	public int getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(int tamanho) {
+		Peca.validarTamanho(tamanho);
+		this.tamanho = tamanho;
+	}
+	
+
+	
 
 	// MÉTODOS VALIDADORES
 	
+	
+
 	private static void validarId(Integer id2) {
 		// TODO Auto-generated method stub
 		
@@ -143,16 +157,23 @@ public class Peca implements Serializable {
 		// TODO Auto-generated method stub
 
 	}
+	
+	private static void validarTamanho(int tamanho) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + cod_peca;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((precoDeCompra == null) ? 0 : precoDeCompra.hashCode());
 		result = prime * result + ((precoVendaPraticado == null) ? 0 : precoVendaPraticado.hashCode());
 		result = prime * result + ((precoVendaSugerido == null) ? 0 : precoVendaSugerido.hashCode());
 		result = prime * result + qtd;
+		result = prime * result + tamanho;
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
@@ -167,6 +188,11 @@ public class Peca implements Serializable {
 			return false;
 		Peca other = (Peca) obj;
 		if (cod_peca != other.cod_peca)
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (precoDeCompra == null) {
 			if (other.precoDeCompra != null)
@@ -185,9 +211,13 @@ public class Peca implements Serializable {
 			return false;
 		if (qtd != other.qtd)
 			return false;
+		if (tamanho != other.tamanho)
+			return false;
 		if (tipo != other.tipo)
 			return false;
 		return true;
 	}
+
+	
 
 }

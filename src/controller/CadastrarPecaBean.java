@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -18,9 +17,8 @@ import model.dao.GenericDAO;
 @ManagedBean(name = "cadastrarPecasBean")
 public class CadastrarPecaBean {
 
-
 	private Peca peca = new Peca();
-	
+
 	private List<Tipo> tipo = new ArrayList<Tipo>();
 
 	@PostConstruct
@@ -34,6 +32,11 @@ public class CadastrarPecaBean {
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Peça cadastrada com sucesso!"));
 
 		return "cadastrarPeca.xhtml";
+	}
+
+	public String limparPecaBean() {
+		this.peca = new Peca();
+		return "cadastrarPeca.xhtml?faces-redirect=true";
 	}
 
 	public Peca getPeca() {
@@ -51,7 +54,5 @@ public class CadastrarPecaBean {
 	public void setTipo(List<Tipo> tipo) {
 		this.tipo = tipo;
 	}
-	
-	
 
 }

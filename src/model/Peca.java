@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "pecas")
 public class Peca implements Serializable {
@@ -33,7 +32,8 @@ public class Peca implements Serializable {
 
 	}
 
-	public Peca(Integer id, int cod_peca, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo) throws DadosException {
+	public Peca(Integer id, int cod_peca, Double PrecoDeCompra, double precoVendaSugerido, int qtd, Tipo tipo)
+			throws DadosException {
 		this.setId(id);
 		this.setCod(cod_peca);
 		this.setPrecoDeCompra(PrecoDeCompra);
@@ -41,7 +41,6 @@ public class Peca implements Serializable {
 		this.setQtd(qtd);
 		this.setTipo(tipo);
 	}
-	
 
 	public Integer getId() {
 		return id;
@@ -52,7 +51,6 @@ public class Peca implements Serializable {
 		this.id = id;
 	}
 
-	
 	public int getCod() {
 		return cod_peca;
 	}
@@ -106,7 +104,7 @@ public class Peca implements Serializable {
 		Peca.validarTipo(tipo);
 		this.tipo = tipo;
 	}
-	
+
 	public int getTamanho() {
 		return tamanho;
 	}
@@ -115,17 +113,12 @@ public class Peca implements Serializable {
 		Peca.validarTamanho(tamanho);
 		this.tamanho = tamanho;
 	}
-	
-
-	
 
 	// MÉTODOS VALIDADORES
-	
-	
 
 	private static void validarId(Integer id2) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private static void validarCod(int cod) throws DadosException {
@@ -157,10 +150,10 @@ public class Peca implements Serializable {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	private static void validarTamanho(int tamanho) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -217,7 +210,5 @@ public class Peca implements Serializable {
 			return false;
 		return true;
 	}
-
-	
 
 }

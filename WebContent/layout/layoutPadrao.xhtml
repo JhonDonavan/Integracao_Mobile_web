@@ -19,12 +19,28 @@ body {
 		<p:layout style="min-width:140px;max-width:1400px;min-height:940px">
 			<p:layoutUnit position="north" size="135" header="Menu superior"
 				resizable="true" closable="false" collapsible="true">
-				<h:outputText value="North unit content." />
+				<ui:insert name="north">
+                       //paginas north
+                    </ui:insert>
 			</p:layoutUnit>
 
 			<p:layoutUnit position="west" size="200" header="Menu lateral"
 				resizable="true" closable="true" collapsible="true">
-				<h:outputText value="West unit content." />
+				<ui:insert name="west">
+
+
+					<h:form>
+						<p:panelMenu style="width:190px">
+							<p:submenu label="Peças">
+								<p:menuitem value="Cadastrar" action="#{cadastrarPecasBean.limparPecaBean()}" icon="ui-icon-disk" />
+								<p:menuitem value="Listar" icon="ui-icon-arrowrefresh-1-w" />
+							</p:submenu>
+
+						</p:panelMenu>
+
+					</h:form>
+
+				</ui:insert>
 			</p:layoutUnit>
 
 			<p:layoutUnit position="center">
@@ -35,7 +51,9 @@ body {
 
 			<p:layoutUnit position="south" size="100" header="Roda pé"
 				resizable="true" closable="true" collapsible="true">
-				<h:outputText value="South unit content." />
+				<ui:insert name="south">
+                       //paginas south
+                    </ui:insert>
 			</p:layoutUnit>
 
 		</p:layout>

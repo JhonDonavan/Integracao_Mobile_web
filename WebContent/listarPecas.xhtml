@@ -10,41 +10,46 @@
 			<h:form>
 				<div>
 					<p:commandButton value="Novo" icon="ui-icon-plus" id="novoCliente"
-						style="margin-right: 1600px;"
-						action="#{}" />
+						style="margin-right: 1600px;" action="#{cadastrarPecasBean.limparPecaBean()}" />
 				</div>
 
-
 				<p:growl />
-				<p:dataTable id="ClienteLista" var="pecasVar" paginator="true"
+				<p:dataTable id="ClienteLista" var="pecasVar" value="#{cadastrarPecasBean.pecas}"  paginator="true"
 					rows="15" rowsPerPageTemplate="5,10,15,20,25,50"
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					style="margin-top:7px;">
 
-					<p:column headerText="Nome" sortBy="#{clientesVAR.nome}}"
-						filterBy="#{clientesVAR.nome}" filterMatchMode="contains">
-						<h:outputText value="#{clientesVAR.nome}" />
+					<p:column headerText="Código" sortBy="#{pecasVar.cod}"
+						filterBy="#{pecasVar.cod}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.cod}" />
+					</p:column>
+					
+					<p:column headerText="Preço de compra" sortBy="#{pecasVar.precoDeCompra}"
+						filterBy="#{pecasVar.precoDeCompra}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.precoDeCompra}" />
+					</p:column>
+					
+					<p:column headerText="Preço de venda sugerido" sortBy="#{pecasVar.precoVendaSugerido}"
+						filterBy="#{pecasVar.precoVendaSugerido}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.precoVendaSugerido}" />
+					</p:column>
+					
+					<p:column headerText="Quantidade" sortBy="#{pecasVar.qtd}"
+						filterBy="#{pecasVar.qtd}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.qtd}" />
+					</p:column>
+					
+					<p:column headerText="Tamanho" sortBy="#{pecasVar.tamanho}"
+						filterBy="#{pecasVar.tamanho}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.tamanho}" />
+					</p:column>
+					
+					<p:column headerText="Tipo" sortBy="#{pecasVar.tipo}"
+						filterBy="#{pecasVar.tipo}" filterMatchMode="contains">
+						<h:outputText value="#{pecasVar.tipo}" />
 					</p:column>
 
-					<p:column headerText="CPF" sortBy="#{clientesVAR.cpf}"
-						filterBy="#{clientesVAR.cpf}" filterMatchMode="contains">
-						<h:outputText />
-					</p:column>
-
-					<p:column headerText="Telefone" sortBy="#{clientesVAR.telefone}">
-						<h:outputText />
-					</p:column>
-
-					<p:column headerText="Celular" sortBy="#{clientesVAR.celular}">
-						<h:outputText />
-					</p:column>
-
-					<p:column headerText="E-Mail" sortBy="#{clientesVAR.email}"
-						filterBy="#{clientesVAR.email}" filterMatchMode="contains">
-						<h:outputText />
-					</p:column>
-
-
+				
 					<p:column style="text-align:center;" exportable="false" width="15%">
 						<p:commandButton icon="ui-icon-zoomin" title="Mais detalhes"
 							oncomplete="PF('detalhes').show();" update=":modalDetalhes">

@@ -31,14 +31,16 @@ public class CadastrarPecaBean {
 	public String salvar() {
 		new GenericDAO<Peca>(Peca.class).salvar(peca);
 		peca = new Peca();
+		pecas = new GenericDAO<Peca>(Peca.class).listarTodos();
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Peça cadastrada com sucesso!"));
 
-		return "cadastrarPeca.xhtml";
+		return "listarPecas.xhtml";
 	}
 	
 	//codificar
 	public List<Peca> listarPecas(){
-		return null;
+		 pecas = new GenericDAO<Peca>(Peca.class).listarTodos();
+		return pecas;
 	}
 
 	public String limparPecaBean() {

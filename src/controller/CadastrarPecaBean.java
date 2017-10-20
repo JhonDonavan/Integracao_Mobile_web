@@ -18,6 +18,8 @@ import model.dao.GenericDAO;
 public class CadastrarPecaBean {
 
 	private Peca peca = new Peca();
+	
+	private List<Peca> pecas = new ArrayList<Peca>();
 
 	private List<Tipo> tipo = new ArrayList<Tipo>();
 
@@ -32,6 +34,11 @@ public class CadastrarPecaBean {
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Peça cadastrada com sucesso!"));
 
 		return "cadastrarPeca.xhtml";
+	}
+	
+	//codificar
+	public List<Peca> listarPecas(){
+		return null;
 	}
 
 	public String limparPecaBean() {
@@ -53,6 +60,14 @@ public class CadastrarPecaBean {
 
 	public void setTipo(List<Tipo> tipo) {
 		this.tipo = tipo;
+	}
+
+	public List<Peca> getPecas() {
+		return pecas;
+	}
+
+	public void setPecas(List<Peca> pecas) {
+		this.pecas = pecas;
 	}
 
 }
